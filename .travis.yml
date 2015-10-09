@@ -9,4 +9,6 @@ before_install:
   - docker pull knowak/invenio_base27
   - docker build -t knowak/zenodo27 .
 script:
-  - docker run knowak/zenodo27
+  - docker run knowak/zenodo27:latest
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push knowak/zenodo27:latest
