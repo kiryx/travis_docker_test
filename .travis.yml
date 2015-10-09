@@ -8,4 +8,5 @@ services:
 before_install:
   - docker pull knowak/invenio_base27
   - docker build -t knowak/zenodo27 .
+script:
   - docker run knowak/zenodo27
